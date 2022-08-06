@@ -1,0 +1,45 @@
+.card {
+  box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: .3125rem;
+  background: #ffffff;
+  position: relative;
+  margin: 0.5rem;
+
+  &:hover, &:focus{
+    transform: scale(1.2);
+    z-index: 9;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem 0 rgba(0,0,0,0.2);
+  }
+}
+
+.card-container{
+  margin: 1.56rem;
+  border: .0625rem solid #e6e6e6;
+  border-radius: 0.5rem;
+}
+
+.card-img{
+  max-width: 10.5rem;
+}
+
+.card-info {
+  padding: .125rem 1rem;
+}
+
+.card-weight-bottom{
+  position: absolute;
+  bottom: .3125rem;
+  right: .3125rem;
+}
+
+.card-weight-top{
+  position: absolute;
+  top: .3125rem;
+  left: .3125rem;
+}
+
+img {
+  border-radius: .3125rem .3125rem 0 0;
+}

@@ -12,7 +12,7 @@ export default function FormNewUser() {
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    localStorage.setItem("cardHolderName", name);
+    localStorage.setItem("player", name);
     navigate("/deck");
   }
   return (
@@ -20,7 +20,7 @@ export default function FormNewUser() {
       <label>
         <input type="text" placeholder="Digite seu nome" onChange={handleChange} value={name} required />
       </label>
-      <button className="show-cards" onClick={handleClick}>Ver Cartas</button>
+      <button className="btn-show-cards" onClick={handleClick}>Ver Cartas</button>
     </form>
   )
 }

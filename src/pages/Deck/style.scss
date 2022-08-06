@@ -1,0 +1,15 @@
+.player-name{
+  color: #ffffff;
+  position: absolute;
+  right: 3.125rem;
+  top: 1.875rem;
+}
+
+.cards-holder{
+  display: flex;
+  border: .0625rem solid rgba(212, 212, 212, 0.319);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1.25rem .9375rem;
+  justify-content: center;
+}
