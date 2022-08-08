@@ -10,7 +10,8 @@ type CardProps = {
 
 export default function Card(props: CardProps) {
 
-  const initialValues = {                   // type all the fields you need
+  const initialValues = { 
+    id: props.number,                  // type all the fields you need
     name: '',
     mainAbility: '',
     secondaryAbility: '',
@@ -26,6 +27,7 @@ export default function Card(props: CardProps) {
         .then((response) => {
             const pokeValues = {
               ...pokemon,
+              id: response.data.id,
               name: response.data.forms[0].name,
               mainAbility: response.data.abilities[0].ability.name,
               secondaryAbility: response.data.abilities[1].ability.name,
@@ -33,9 +35,10 @@ export default function Card(props: CardProps) {
             }
             setPokemon(pokeValues)
         })
-        .catch((err) => {
+        .catch(() => {
           const pokeValues = {
             ...pokemon,
+            id: '0',
             name: 'Pokemon',
             mainAbility: 'Carta',
             secondaryAbility: 'Coringa',

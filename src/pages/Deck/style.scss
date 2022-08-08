@@ -18,13 +18,12 @@
   max-width: 81.25rem;
 }
 
-.btn-draw{
+.btn{
   background: transparent;
   text-decoration: none;
   background-color: #66B2FF;
-  margin: auto;
-  margin-top: 3.125rem;
-  padding: 3rem 1.75rem;
+  margin: 3.125rem 0.5rem;
+  padding: 2rem 1rem;
   color: #21202e;
   font-weight: bold;
   font-family: 'Roboto';
@@ -38,34 +37,6 @@
     cursor: pointer;
   }
 }
-
-.plus-icon {
-  height: 32px;
-  width: 32px;
-  position: relative;
-
-  &::after, &::before{
-    content: " ";
-    width: 24px;
-    height: 4px;
-    background-color: #21202e;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transition: all 0.15s cubic-bezier(.42, 0, .58, 1);
-    opacity: 1;
-    border-radius: 2px;
-  }
-
-  &::before{
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-  &::after{
-    transform: translate(-50%, -50%);
-  }
-}
-
 
 #swalText{
   font-family: 'Roboto', sans-serif;
