@@ -28,9 +28,9 @@ export function Deck() {
 
   const cardOfDecks = cards.map(card => card)
 
-  function shuffleHandler(arr) {
-    let arr2 = [...arr].sort(() => Math.random() - 0.5)
-    setCards(arr2)
+  function shuffleHandler(orderedDeck: string[]) {
+    let reOrderedDeck = [...orderedDeck].sort(() => Math.random() - 0.5)
+    setCards(reOrderedDeck)
 };
 
   function shuffle() {
@@ -47,7 +47,7 @@ export function Deck() {
         icon: 'error',
         html: '<div id="swalText">Você atingiu o limite máximo de cartas na mesa</div>',
         showConfirmButton: false,
-        timer: 150000,
+        timer: 1500,
         toast: true,
       })
     } else {
