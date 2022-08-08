@@ -3,13 +3,89 @@
   position: absolute;
   right: 3.125rem;
   top: 1.875rem;
+
+  text-transform: capitalize;
 }
 
 .cards-holder{
   display: flex;
+  flex-wrap: wrap;
   border: .0625rem solid rgba(212, 212, 212, 0.319);
   border-radius: 0.5rem;
   width: 100%;
   padding: 1.25rem .9375rem;
   justify-content: center;
+  max-width: 81.25rem;
+}
+
+.btn-draw{
+  background: transparent;
+  text-decoration: none;
+  background-color: #66B2FF;
+  margin: auto;
+  margin-top: 3.125rem;
+  padding: 3rem 1.75rem;
+  color: #21202e;
+  font-weight: bold;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  animation: pulse 2s infinite;
+
+  border-radius: 6px;
+
+  &:hover, &:focus{
+    background-color: #73b8fc;
+    cursor: pointer;
+  }
+}
+
+.plus-icon {
+  height: 32px;
+  width: 32px;
+  position: relative;
+
+  &::after, &::before{
+    content: " ";
+    width: 24px;
+    height: 4px;
+    background-color: #21202e;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.15s cubic-bezier(.42, 0, .58, 1);
+    opacity: 1;
+    border-radius: 2px;
+  }
+
+  &::before{
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  &::after{
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+#swalText{
+  font-family: 'Roboto', sans-serif;
+}
+
+.swal2-toast{
+  display: flex !important;
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 #66b3ff55;
+    box-shadow: 0 0 0 0 #66b3ff55;
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px #66b3ff00;
+      box-shadow: 0 0 0 10px #66b3ff00;
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 #66b3ff00;
+      box-shadow: 0 0 0 0 #66b3ff00;
+  }
 }

@@ -2,7 +2,9 @@ import React from 'react'
 import { Outlet, Link, useNavigate  } from "react-router-dom"
 import {SetStateAction, useState} from 'react'
 
-export default function FormNewUser() {
+import "./style.scss"
+
+export default function FormNewPlayer() {
   let navigate = useNavigate();
   const [name, setName] = useState('');
 
@@ -16,7 +18,7 @@ export default function FormNewUser() {
     navigate("/deck");
   }
   return (
-    <form className="form-new-user" action="">
+    <form className="form-new-player" action="">
       <label>
         <input type="text" placeholder="Digite seu nome" onChange={handleChange} value={name} required />
       </label>

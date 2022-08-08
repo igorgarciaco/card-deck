@@ -7,49 +7,4 @@
   img{
     max-width: 100%;
   }
-
-  .form-new-user{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-
-    label{
-      display: flex;
-      flex-direction: column;
-      color: rgba(255, 255, 255, 0.702);
-      font-size: 3rem;
-  
-      input{
-        margin-top: 1rem;
-        font-size: 2rem;
-        padding: 1rem;
-        color: white;
-        background: rgba(255, 255, 255, 0.026);
-  
-        border: 0;
-        border-bottom: 1px solid white;
-        border-radius: 6px 6px 0 0;
-      }
-    }
-
-    .btn-show-cards{
-      background: transparent;
-      text-decoration: none;
-      background-color: #66B2FF;
-      margin: 1rem auto;
-      padding: 1rem 3rem;
-      color: #21202e;
-      font-weight: bold;
-      font-family: 'Roboto';
-      text-transform: uppercase;
-
-      border-radius: 6px;
-
-      &:hover, &:focus{
-        background-color: #73b8fc;
-        cursor: pointer;
-      }
-    }
-  }
-
 }
