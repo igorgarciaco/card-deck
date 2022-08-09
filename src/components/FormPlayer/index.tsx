@@ -2,6 +2,7 @@ import React from 'react'
 import { Outlet, Link, useNavigate  } from "react-router-dom"
 import {SetStateAction, useState} from 'react'
 
+import { savePlayerName } from '../../utils/storage';
 import "./style.scss"
 
 export default function FormNewPlayer() {
@@ -14,11 +15,11 @@ export default function FormNewPlayer() {
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    localStorage.setItem("player", name);
+    savePlayerName(name);
     navigate("/deck");
   }
   return (
-    <form className="form-new-player" action="">
+    <form className="form-new-player">
       <label>
         <input type="text" placeholder="Digite seu nome" onChange={handleChange} value={name} required />
       </label>

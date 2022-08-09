@@ -1,72 +1,49 @@
-import { useEffect, useState } from 'react'
-import api from '../../services/api'
-import PokeZeroImage from '../../assets/pokemon_zero.png'
+import { useEffect, useMemo, useState } from "react";
+import { getPokemonById } from "../../services/api";
 
-import './style.scss'
+
+import "./style.scss";
 
 type CardProps = {
-  number: string,
-}
+  number: number;
+};
 
 export default function Card(props: CardProps) {
+  const numberLessOne = useMemo(() => props.number - 1 ,[props.number])
 
-  const initialValues = { 
-    id: props.number,                  // type all the fields you need
-    name: '',
-    mainAbility: '',
-    secondaryAbility: '',
-    image: ''
+  const initialValues = {
+    name: "",
+    mainAbility: "",
+    secondaryAbility: "",
+    image: "",
   };
 
   const [pokemon, setPokemon] = useState(initialValues);
 
-  function newPokemon(pokeId: string) {
     useEffect(() => {
-      api
-        .get("pokemon/" + pokeId + "/")
-        .then((response) => {
-            const pokeValues = {
-              ...pokemon,
-              id: response.data.id,
-              name: response.data.forms[0].name,
-              mainAbility: response.data.abilities[0].ability.name,
-              secondaryAbility: response.data.abilities[1].ability.name,
-              image: response.data.sprites.front_default,
-            }
-            setPokemon(pokeValues)
-        })
-        .catch(() => {
-          const pokeValues = {
-            ...pokemon,
-            id: '0',
-            name: 'Pokemon',
-            mainAbility: 'Carta',
-            secondaryAbility: 'Coringa',
-            image: PokeZeroImage
-          }
-          setPokemon(pokeValues)
-        });
+      getPokemonById(props.number).then((data) => {
+        setPokemon(data);
+      });
     }, []);
-  }
-
-  newPokemon(props.number);
 
   return (
     <>
       <div className="card">
-        <div className="card-weight-top">{props.number}</div>
+        <div className="card-weight-top">{numberLessOne}</div>
         <div className="card-container">
           <img src={pokemon.image} alt="Imagem da carta" className="card-img" />
           <div className="card-info">
-            <h4><b>{pokemon.name}</b></h4>
+            <h4>
+              <b>{pokemon.name}</b>
+            </h4>
             <div className="abilities">
               <p>{pokemon.mainAbility}</p>
               <p>{pokemon.secondaryAbility}</p>
             </div>
           </div>
         </div>
-        <div className="card-weight-bottom">{props.number}</div>
+        <div className="card-weight-bottom">{numberLessOne}</div>
       </div>
     </>
-  )
+  );
 }
